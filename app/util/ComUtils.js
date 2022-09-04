@@ -1,7 +1,10 @@
-import { Dimensions, NativeModules, ToastAndroid } from "react-native";
+import { Dimensions, NativeModules, Platform, ToastAndroid } from "react-native";
 
 // export const LogUtils = NativeModules.LogUtil;
 
+export function isAndroid() {
+  return Platform.OS === 'android'
+}
 
 export function showLog(msg) {
   console.log(msg);
