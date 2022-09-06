@@ -86,3 +86,14 @@ export function base64Url(str) {
   return `data:image/png;base64,${str}`;
 }
 
+export function isBase64(str){
+  if(str === '' || str.trim() === ''){
+    return false;
+  }
+  try{
+    return btoa(atob(str)) == str;
+  }catch(err){
+    return false;
+  }
+}
+

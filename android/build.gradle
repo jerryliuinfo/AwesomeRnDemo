@@ -2,13 +2,18 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "30.0.2"
+//        buildToolsVersion = "30.0.2"
         minSdkVersion = 21
-        compileSdkVersion = 30
-        targetSdkVersion = 30
+        compileSdkVersion = 28
+        targetSdkVersion = 28
         ndkVersion = "20.1.5948944"
     }
     repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+
+        maven {
+            url 'http://nexus20.tclking.com/repository/proxy-nexus-maven-pub/'
+        }
         google()
         mavenCentral()
     }
@@ -21,6 +26,12 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+
+        maven {
+            url 'http://nexus20.tclking.com/repository/proxy-nexus-maven-pub/'
+        }
+
         mavenCentral()
         mavenLocal()
         maven {
@@ -34,5 +45,13 @@ allprojects {
 
         google()
         maven { url 'https://www.jitpack.io' }
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+        resolutionStrategy {
+            force 'com.facebook.react:react-native:0.62.3'
+//            force 'com.tcl.component.arch:ca-core:1.0.5'
+        }
     }
 }

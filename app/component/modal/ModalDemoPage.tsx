@@ -21,17 +21,42 @@ export class ModalDemoPage extends React.Component<any, IModalState>{
     });
   }
 
+  private _onShow() {
+    showLog(`onShow....`)
+  }
+
+  private _onDismiss() {
+
+  }
+
   render() {
     const {modalVisible} = this.state
     return (
-      <View style={styles.centeredView}>
+      <View style={styles.container}>
         <Modal
+          //animationType指定了 modal 的动画类型。
+          // slide: 从底部滑入滑出。 fade: 淡入淡出。none 没有动画，直接蹦出来
           animationType={'slide'}
-          transparent={true}
+          // transparent={true}
           visible={modalVisible}
+          //onRequestClose回调会在用户按下 Android 设备上的后退按键或是 Apple TV 上的菜单键时触发。
+          // 请务必注意本属性在 Android 平台上为必需，且会在 modal 处于开启状态时阻止BackHandler事件。
           onRequestClose={() => {
             this.hideModal()
           }}
+
+          onShow={() => {this._onShow()}}
+          onDismiss={() => this._onDismiss()}
+          //StatusBar半透明道具确定您的模态是否应该放在系统状态栏下面。
+          statusBarTranslucent={true}
+          /**resentationStyle决定 modal（在较大屏幕的设备比如 iPad 或是 Plus 机型）如何展现
+          * fullScreen: 完全盖满屏幕。
+          * pageSheet: 直方向几乎盖满，水平居中，左右留出一定空白（仅用于大屏设备）。
+          * formSheet: 竖直和水平都居中，四周都留出一定空白（仅用于大屏设备）。
+          * overFullScreen: 完全盖满屏幕，同时允许透明。
+          */
+          presentationStyle={'formSheet'}
+
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
@@ -63,14 +88,26 @@ export class ModalDemoPage extends React.Component<any, IModalState>{
       </View>
     );
   }
+
+
+
 }
 
 const styles = StyleSheet.create({
-  centeredView: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22
+    marginTop: 22,
+    // backgroundColor:'red',
+  },
+  centeredView: {
+    flex: 1,
+    flexDirection:'column',
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+    // backgroundColor:'red',
   },
   modalView: {
     margin: 20,

@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 
 interface ISectionProps{
