@@ -54,12 +54,12 @@ console.log(d);
   if(str === '' || str.trim() === ''){
     return false;
   }
-  try{
-    return btoa(atob(str)) == str;
-  }catch(err){
-    return false;
-  }
-}
+   try {
+     return btoa(atob(str)) == str;
+   } catch (err) {
+     return false;
+   }
+ }
 function isBase642(str){
   const notBase64 = /[^A-Z0-9+\/=]/i;
   const len = str.length;

@@ -14,7 +14,7 @@ import SectionComponent from "./component/common/SectionComponent";
 import {
   PATH_ACTIVITY_INDICATOR,
   PATH_BUTTON,
-  PATH_FLAT_LIST,
+  PATH_FLAT_LIST, PATH_FLEX_VERIFY_PWD, PATH_FLEX_DICE, PATH_FLEX_GRAMMAR,
   PATH_IMAGE,
   PATH_IMAGE_BACKGROUND,
   PATH_KEYBOARD,
@@ -22,7 +22,13 @@ import {
   PATH_PRESSABLE,
   PATH_REFRESH_CONTROL,
   PATH_SCROLLVIEW,
-  PATH_SECTION_LIST, PATH_STATUSBAR, PATH_SWITCH, PATH_TEXT, PATH_TEXT_INPUT,
+  PATH_SECTION_LIST,
+  PATH_STATUSBAR,
+  PATH_SWITCH,
+  PATH_TEXT,
+  PATH_TEXT_INPUT,
+  PATH_TOUCHABLE_HIGHLIGHT,
+  PATH_TOUCHABLE_OPACITY, PATH_FLEX_ALIGN_CONTENT_SELF, PATH_FC_TODO,
 } from "./consants/RoutConstants";
 
 class HomePage extends React.Component {
@@ -122,9 +128,42 @@ class HomePage extends React.Component {
               onPress={() =>{navigation.navigate(PATH_TEXT)}}
             />
             <SectionComponent
-              title={'TextInput'}
-              desc={'TextInput 是一个允许用户在应用中通过键盘输入文本的基本组件'}
-              onPress={() =>{navigation.navigate(PATH_TEXT_INPUT)}}
+              title={'TouchableHighlight'}
+              desc={'本组件用于封装视图，使其可以正确响应触摸操作'}
+              onPress={() =>{navigation.navigate(PATH_TOUCHABLE_HIGHLIGHT)}}
+            />
+            <SectionComponent
+              title={'TouchableOpacity'}
+              desc={'用于封装视图，使其可以正确响应触摸操作。当按下的时候，封装的视图的不透明度会降低'}
+              onPress={() =>{navigation.navigate(PATH_TOUCHABLE_OPACITY)}}
+            />
+            <SectionComponent
+              title={'Flex JustifyContent'}
+              desc={'JustifyContent"'}
+              onPress={() =>{navigation.navigate(PATH_FLEX_GRAMMAR)}}
+            />
+            <SectionComponent
+              title={'flex-grow'}
+              desc={'flex-grow"'}
+              onPress={() =>{navigation.navigate(PATH_FLEX_ALIGN_CONTENT_SELF)}}
+            />
+
+
+            <SectionComponent
+              title={'Flex布局'}
+              desc={'键盘布局'}
+              onPress={() =>{navigation.navigate(PATH_FLEX_VERIFY_PWD)}}
+            />
+            <SectionComponent
+              title={'Flex骰子布局'}
+              desc={'Flex骰子布局'}
+              onPress={() =>{navigation.navigate(PATH_FLEX_DICE)}}
+            />
+
+            <SectionComponent
+              title={'函数式组件'}
+              desc={'函数式组件TodoListDemo'}
+              onPress={() =>{navigation.navigate(PATH_FC_TODO)}}
             />
           </View>
         </ScrollView>
