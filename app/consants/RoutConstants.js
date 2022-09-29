@@ -1,3 +1,4 @@
+export const PATH_REDUX_DEMO = "reduxDemo"; //ReduxDe
 export const PATH_HOME = "home"; //首页
 export const PATH_ACTIVITY_INDICATOR = "indicator"; //loading 页面
 export const PATH_BUTTON = "Button"; //Button 页面
@@ -16,8 +17,3 @@ export const PATH_TEXT = "Text"; //Text
 export const PATH_TEXT_INPUT = "TextInput"; //TextInput
 export const PATH_TOUCHABLE_HIGHLIGHT = "TouchableHighlight"; //TouchableHighlight
 export const PATH_TOUCHABLE_OPACITY = "TouchableOpacity"; //TouchableOpacity
-export const PATH_FLEX_VERIFY_PWD = "Flex"; //Flex
-export const PATH_FLEX_GRAMMAR = "FlexGrammar"; //FlexGrammar
-export const PATH_FLEX_ALIGN_CONTENT_SELF = "FlexAlignContentSelf"; //FlexGrow
-export const PATH_FLEX_DICE = "FlexDice"; //FlexDice
-export const PATH_FC_TODO = "FcTodo"; //函数式组件
